@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Travel Memories✈️✈️✈️**
 
-## Available Scripts
+#### By: **Celeste Field**
+#### July 13, 2020
+<hr />
 
-In the project directory, you can run:
+### Description
 
-### `npm start`
+_This application uses React with create-react-app, components, JSX, Firebase/Firestore and props while building a dynamic site with Redux. Users can submit messages via a form, then see them displayed on a sorted messge board by country visited. They are also able to upload their favorite photo of the trip._
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Component Diagram](./src/memory-board.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<hr />
 
-### `npm test`
+### Instructions for use:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Open Terminal (macOS) or PowerShell (Windows)
+2. To download the project Directory to your desktop enter the following commands:
+```
+cd Desktop
+git clone https://github.com/fieldceleste/memory-board.git
+cd memory-board
+```
+3. To view the downloaded files, open them in a text editor or IDE of your choice.
+* if you have VSCode for example, when your terminal is within the main project Directory you can open all of the files with the command:
+```
+code .
+```
+5. Download node and node package manager if they are not already installed on your device. You can find further instructions [here](https://www.learnhowtoprogram.com/intermediate-javascript/getting-started-with-javascript-8d3b52cf-3755-481d-80c5-46f1d3a8ffeb/installing-node-js-14f2721a-61e0-44b3-af1f-73f17348c8f4).
+5. Run npm install in your terminal to download the necessary dependencies, plugins, and modules.
+```
+npm install
+```
 
-### `npm run build`
+6. When ready for production mode run this command in order to optimize the best preformance:
+```
+npm run build
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7. The command npm run start will build and open the compiled code in a browser of your choice using a local host.
+```
+npm run start
+```
+<hr />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Known Bugs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+No bugs have been identified at the time of this update.
 
-### `npm run eject`
+<hr />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Support and Contact Information
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Please contact me with any suggestions or questions at fieldceleste@gmail.com. 
+_Have a bug or an issue with this application? [Open a new issue](https://github.com/fieldceleste/memory-board.git/issues) here on GitHub._
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Technologies Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* JavaScript
+* React
+* Redux
+* Firebase
+* JSX
+* HTML
+* Node.js
+* Git and GitHub
 
-## Learn More
+<hr />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### User Stories
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Allows user to create, read, update & delete posts.
+2. Allows user to submit their form and have it displayed in the message board. 
+3. User can sign up, sign in, and sign out. 
+4. User can sign in and have their messages be asscoiated to their username. 
+5. Further Exploration- Be able to have the user add photos to their post. 
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### License
 
-### Analyzing the Bundle Size
+This software is licensed under the MIT license.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright © 2020 **_Celeste Field_**
