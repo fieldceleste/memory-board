@@ -1,20 +1,26 @@
 import React from 'react';
 import Header from './Header';
 import PostControl from './PostControl';
-import MessageBoard from './MessageBoard';
-// import Signin from "./Signin";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import './App.css';
+import Signin from "./Signin";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 
 function App(){
-  return (
-    <React.Fragment>
+  return ( 
+    <Router>
       <Header />
-      <PostControl />
-      <MessageBoard />
-    </React.Fragment>
+      <Switch>
+        <Route path="/signin">
+          <Signin />
+        </Route>
+        <Route path="/">
+          <PostControl />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
+
 
 export default App;

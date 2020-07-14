@@ -3,7 +3,7 @@ import Post from "./Post";
 import PropTypes from "prop-types";
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
-import PostInfo from "./PostInfo";
+// import PostInfo from "./PostInfo";
 
 function MessageBoard(props) {
   useFirestoreConnect([
@@ -42,4 +42,4 @@ MessageBoard.propTypes = {
   selectingPost: PropTypes.func
 };
 
-export default PostInfo;
+export default MessageBoard;

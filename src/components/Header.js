@@ -1,12 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return(
     <React.Fragment>
-      <h1>Welcome To Your Message Board!</h1>
-      <h2>Username will be here.</h2>
-      <p>See your recent travels below</p>
-    </React.Fragment>
+    <h1>Travel Memory Board</h1>
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/signin">Sign In</Link>
+      </li>
+    </ul>
+  </React.Fragment>
   );
 }
 

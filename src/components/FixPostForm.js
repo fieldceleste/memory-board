@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import NewPostTemplete from './NewPostTemplete';
+import NewPostTemplete from './NewPostTemplete';
 import { useFirestore } from 'react-redux-firebase';
 
-function fixPostForm(props) {
+function FixPostForm(props) {
   const firestore = useFirestore();
   const { post } = props;
 
@@ -46,7 +46,7 @@ function fixPostForm(props) {
     </React.Fragment>
   );
 }
-fixPostForm.propTypes = {
+FixPostForm.propTypes = {
   onFixPost: PropTypes.func
 };
-export default fixPostForm;
+export default FixPostForm;
