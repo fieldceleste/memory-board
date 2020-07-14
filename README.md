@@ -6,7 +6,7 @@
 
 ### Description
 
-_This application uses React with create-react-app, components, JSX, Firebase/Firestore and props while building a dynamic site with Redux. Users can submit messages via a form, then see them displayed on a sorted messge board by country visited. They are also able to upload their favorite photo of the trip._
+_This application uses React with create-react-app, components, JSX, Firebase/Firestore and props while building a dynamic site with Redux. Users can submit messages via a form, then see them displayed on a sorted message board by country visited. They are also able to upload their favorite photo of the trip._
 
 ![Component Diagram](./src/memory-board.png)
 
