@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function Post(props) {
   return (
     <React.Fragment>
-      <div onClick={() => props.whenPostClicked(props.id)}>
+      <div onClick= {() => props.whenPostClicked(props.id)}>
         <h1>{props.username}</h1>
         <h2>{props.country}-{props.city}</h2>
         <h3>{props.date}</h3>

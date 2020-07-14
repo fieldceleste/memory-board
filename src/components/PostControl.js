@@ -36,14 +36,38 @@ class PostControl extends React.Component {
   handleChangingSelectedPost = (id) => {
     this.props.firestore.get({collection: 'posts', doc: id}).then((post) => {
       const firestorePost = {
-        name: post.get("name"),
+        username: post.get("username"),
         country: post.get("country"),
         city: post.get("city"),
+        date: post.get("date"),
+        message: post.get("message"),
         id: post.id
       }
       this.setState({selectedPost: firestorePost});
     });
   }
+
+  //deleting post
+  handleDeletingPost = (id) => {
+    this.props.firestore.delete({collection: 'posts', doc: id});
+    this.setState({
+      selectedPost: null
+  });
+}
+
+ // for editing
+ handleEditClick = () => {
+  this.setState({
+    editing: true});
+}
+
+ handleFixingPostOnBoard = () => {
+  this.setState({ 
+    editing: false,
+    selectedPost: null
+  });
+}
+
 
   render(){
     let currentlyVisibleState = null;
@@ -54,19 +78,21 @@ class PostControl extends React.Component {
     if (this.state.selectedPost != null) {
       currentlyVisibleState = 
       <PostInfo
-        post = {this.state.selectedPost} />
+      post = {this.state.selectedPost}
+      onClickingEdit = {this.handleEditClick}
+      onClickingDelete = {this.handleDeletingPost} />
       buttonText = "Return to Posts";
 
     } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = 
       <NewPostTemplete 
-      onNewPostCreation={this.handleAddingNewPostToList} />
+      creatingNewPost ={this.handleAddingNewPostToList} />
       buttonText = "Return to Posts";
+
     } else {
       currentlyVisibleState = 
-      <PostInfo 
-      postInfo={this.props.masterPostInfo} 
-      onPostSelection={this.handleChangingSelectedPost} />
+      <MessageBoard
+      selectingPost ={this.handleChangingSelectedPost} />
       buttonText = "Add Post";
     }
 
