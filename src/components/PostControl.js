@@ -14,17 +14,25 @@ class PostControl extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedPost: null
+      selectedPost: null,
+      fixPost: false
     };
 
   }
-//toggle form
+  // click function for buttons
   handleFormClick = () => {
-    const { dispatch } = this.props;
-    const action = a.toggleForm();
-    dispatch(action);
+    if (this.state.selectedPost != null) {
+      this.setState({
+        selectedPost: null,
+        fixPost: false
+      });
+    } else {
+      const { dispatch } = this.props;
+      const action = a.toggleForm();
+      dispatch(action);
+    }
   }
-
+  
   // add post to board
   handleAddingNewPostToList = () => {
     const { dispatch } = this.props;
@@ -58,12 +66,12 @@ class PostControl extends React.Component {
  // for editing
  handleEditClick = () => {
   this.setState({
-    editing: true});
+    fixPost: true});
 }
 
  handleFixingPostOnBoard = () => {
   this.setState({ 
-    editing: false,
+    fixPost: false,
     selectedPost: null
   });
 }
@@ -72,30 +80,9 @@ class PostControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
+   
 
     const auth = this.props.firebase.auth();
-    
-    if (this.state.selectedPost != null) {
-      currentlyVisibleState = 
-      <PostInfo
-      post = {this.state.selectedPost}
-      onClickingEdit = {this.handleEditClick}
-      onClickingDelete = {this.handleDeletingPost} />
-      buttonText = "Return to Posts";
-
-    } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = 
-      <NewPostTemplete 
-      creatingNewPost ={this.handleAddingNewPostToList} />
-      buttonText = "Return to Posts";
-
-    } else {
-      currentlyVisibleState = 
-      <MessageBoard
-      selectingPost ={this.handleChangingSelectedPost} />
-      buttonText = "Add Post";
-    }
-
     if (!isLoaded(auth)) {
       return (
         <React.Fragment>
@@ -103,7 +90,6 @@ class PostControl extends React.Component {
         </React.Fragment>
       )
     }
-
     if (isLoaded(auth) && (auth.currentUser === null)) {
       return (
         <React.Fragment>
@@ -112,6 +98,39 @@ class PostControl extends React.Component {
       )
     }
     if ((isLoaded(auth)) && (auth.currentUser != null)) {
+    
+      if (this.state.fixPost ) {   
+        currentlyVisibleState = 
+        <FixPostForm
+        post = {this.state.selectedPost} 
+        onFixPost = {this.handleFixingPostOnBoard }/>
+        buttonText = "Return to Posts";
+      
+       
+      } else if (this.state.selectedPost != null) {
+        currentlyVisibleState = 
+        <PostInfo
+        post = {this.state.selectedPost}
+        onClickingEdit = {this.handleEditClick}
+        onClickingDelete = {this.handleDeletingPost} />
+        buttonText = "Return to Posts";
+    
+
+      } else if (this.props.formVisibleOnPage) {
+        currentlyVisibleState = 
+        <NewPostTemplete 
+        creatingNewPost ={this.handleAddingNewPostToList} />
+        buttonText = "Return to Posts";
+
+
+      } else {
+        currentlyVisibleState = 
+        <MessageBoard
+        selectingPost ={this.handleChangingSelectedPost}/>
+         console.log()
+        buttonText = "Add Post";
+        
+      }
     return (
       <React.Fragment>
         {currentlyVisibleState}

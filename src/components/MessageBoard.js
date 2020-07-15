@@ -2,8 +2,8 @@ import React from "react";
 import Post from "./Post";
 import PropTypes from "prop-types";
 import { useSelector } from 'react-redux';
-import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
-// import PostInfo from "./PostInfo";
+import { useFirestoreConnect, isLoaded} from 'react-redux-firebase';
+
 
 function MessageBoard(props) {
   useFirestoreConnect([
