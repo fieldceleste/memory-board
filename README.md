@@ -69,9 +69,9 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 
 ### User Stories
 
-1. Allows user to create, read, update & delete posts.
-2. Allows user to submit their form and have it displayed in the message board. 
-3. User can sign up, sign in, and sign out. 
+1. Allows user to create, read, update & delete posts. √
+2. Allows user to submit their form and have it displayed in the message board. √
+3. User can sign up, sign in, and sign out. √
 4. User can sign in and have their messages be asscoiated to their username. 
 5. Further Exploration- Be able to have the user add photos to their post. 
 
