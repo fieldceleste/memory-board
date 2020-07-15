@@ -98,7 +98,7 @@ class PostControl extends React.Component {
       )
     }
     if ((isLoaded(auth)) && (auth.currentUser != null)) {
-    
+
       if (this.state.fixPost ) {   
         currentlyVisibleState = 
         <FixPostForm

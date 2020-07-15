@@ -1,5 +1,7 @@
 import React from "react";
 import firebase from "firebase/app";
+import { Redirect } from "react-router-dom";
+
 
 
 function Signin() {
@@ -48,7 +50,6 @@ function Signin() {
           name='password'
           placeholder='Password' />
         <button type='submit'>Sign up</button>
-        <h3>{doSignIn}</h3>
       </form>
 
 
@@ -64,6 +65,9 @@ function Signin() {
           placeholder='Password' />
         <button type='submit'>Sign in</button>
       </form>
+     
+       
+ 
 
       <h2>Sign Out</h2>
       <button onClick={doSignOut}>Sign out</button>
@@ -74,3 +78,4 @@ function Signin() {
 }
 
 export default Signin;
+
